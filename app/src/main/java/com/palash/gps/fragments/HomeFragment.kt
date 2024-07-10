@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        locationViewModel.locationData.observe(this, Observer { location ->
+        locationViewModel.locationData.observe(viewLifecycleOwner, Observer { location ->
             updateUI(location)
         })
 
